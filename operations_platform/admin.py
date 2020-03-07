@@ -17,6 +17,9 @@ class NodeAdmin(admin.ModelAdmin):
 
 
 class LineAdmin(admin.ModelAdmin):
+    # 添加保存后，需要添显示的字段
+    list_display = ('line_code', 'line_local', 'line_spname', 'line_status')
+
     # 在编辑、新增页面排除line_signer选项
     exclude = ('line_signer', )
 
@@ -26,6 +29,9 @@ class LineAdmin(admin.ModelAdmin):
         obj.save()
 
 class DeviceAdmin(admin.ModelAdmin):
+    # 添加保存后，需要添显示的字段
+    list_display = ('device_caption', 'device_vendor', 'device_ip', 'device_status')
+
     # 在编辑、新增页面上排除device_signer的选项
     exclude = ('device_signer', )
 
