@@ -18,7 +18,7 @@ class Node(models.Model):
     node_signtime = models.DateField(auto_now_add=True)
 
     # 返回相应的值
-    def __unicode__(self):
+    def __str__(self):
         return self.node_name
 
 

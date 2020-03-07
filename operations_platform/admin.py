@@ -12,7 +12,7 @@ class NodeAdmin(admin.ModelAdmin):
 
     # 将登录用户设置为登记人
     def save_model(self, request, obj, form, change):
-        obj.node_signer = str(request.user)
+        obj.node_signer = str(request.user.username)
         obj.save()
 
 
@@ -22,7 +22,7 @@ class LineAdmin(admin.ModelAdmin):
 
     #对保存函数进行更改，将登陆用户设置为登记人
     def save_model(self, request, obj, form, change):
-        obj.line_signer = str(request.user)
+        obj.line_signer = str(request.user.username)
         obj.save()
 
 class DeviceAdmin(admin.ModelAdmin):
@@ -31,7 +31,7 @@ class DeviceAdmin(admin.ModelAdmin):
 
     # 对保存函数进行更改，将登录人设置为登记人
     def save_model(self, request, obj, form, change):
-        obj.device_signer = str(request.user)
+        obj.device_signer = str(request.user.username)
         obj.save()
 
 
