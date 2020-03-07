@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>节点名称</th>
+            <th>节点地址</th>
+            <th>节点类型</th>
+        </tr>
+        {% for item in data %}
+            <tr>
+                <td>{{ item.node_name }}</td>
+                <td>{{ item.node_address }}</td>
+                <td>{{ item.node_type }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>
